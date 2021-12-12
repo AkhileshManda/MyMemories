@@ -17,7 +17,7 @@ class _MusicPageState extends State<MusicPage> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/happier.png'), fit: BoxFit.cover)),
+                image: AssetImage('assets/forest.jpg'), fit: BoxFit.cover)),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
           child: Column(
@@ -38,19 +38,15 @@ class _MusicPageState extends State<MusicPage> {
                       onPressed: (){
                         Navigator.pop(context);
                       },
-
-
-
-
                     ),
-                    Text(
+                    const Text(
                       'Now Playing',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 25,
                           fontWeight: FontWeight.w900),
                     ),
-                    Icon(
+                    const Icon(
                       Icons.more_vert,
                       color: Colors.white,
                     ),
@@ -66,7 +62,7 @@ class _MusicPageState extends State<MusicPage> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: const DecorationImage(
-                        image: AssetImage('assets/happier.png'),
+                        image: AssetImage('assets/forest.jpg'),
                         fit: BoxFit.cover)),
               ),
               const SizedBox(

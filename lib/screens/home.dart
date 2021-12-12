@@ -17,16 +17,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('My Memories', style:TextStyle(fontSize: 30.0)),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Home',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              ),
+              // Text(
+              //   'Home',
+              //   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              // ),
 
               Carousel(),
 

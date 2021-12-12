@@ -39,6 +39,7 @@ class _AddMemoriesState extends State<AddMemories> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: const Text('Add memories'),
       ),
       body: Column(

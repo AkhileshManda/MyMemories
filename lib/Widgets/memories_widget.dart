@@ -24,9 +24,7 @@ class _MemoriesListState extends State<MemoriesList> {
        Consumer<GreatMemories>(
          child: Padding(
            padding: const EdgeInsets.all(8.0),
-           child: Center(
-             child: Text('Make new memories', style: TextStyle(fontSize: 20),),
-           ),
+           child: SizedBox()
          ),
           builder: (context,greatMemories,ch)=> greatMemories.items.length<=0 ? ch:
           SingleChildScrollView(
