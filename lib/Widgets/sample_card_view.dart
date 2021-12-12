@@ -1,4 +1,5 @@
-import 'package:arcore/screens/ar_widget.dart';
+import 'package:arcore/ar_widgets/ar_widget.dart';
+import 'package:arcore/ar_widgets/ar_widget2.dart';
 import 'package:arcore/screens/sample_memory_details.dart';
 import 'package:flutter/material.dart';
 class SampleCards extends StatelessWidget {
@@ -26,11 +27,7 @@ class SampleCards extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-
                   Image(image :AssetImage('assets/happier.png')),
-
-
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
@@ -49,8 +46,6 @@ class SampleCards extends StatelessWidget {
                       },
                       child: Text('Go to AR')
                   )
-
-
                 ],
               ),
             ),
@@ -88,12 +83,10 @@ class SampleCards extends StatelessWidget {
 
                   ElevatedButton(
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ARPage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ARPage2()));
                       },
                       child: Text('Go to AR')
                   )
-
-
                 ],
               ),
             ),

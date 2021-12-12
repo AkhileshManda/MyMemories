@@ -3,7 +3,7 @@ import 'package:arcore/screens/add_memories.dart';
 import 'package:flutter/material.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
-import 'screens/ar_widget.dart';
+import 'ar_widgets/ar_widget.dart';
 import 'screens/home.dart';
 import 'package:provider/provider.dart';
 

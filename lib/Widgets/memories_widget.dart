@@ -4,7 +4,7 @@ import 'package:arcore/screens/memories_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../screens/ar_widget.dart';
+import '../ar_widgets/ar_widget.dart';
 class MemoriesList extends StatefulWidget {
   const MemoriesList({Key key}) : super(key: key);
 
