@@ -1,58 +1,26 @@
-import 'package:arcore/Widgets/music_widget.dart';
-import 'package:arcore/screens/add_memories.dart';
-import 'package:arcore/screens/ar_widget.dart';
-import 'package:arcore/Widgets/carousel.dart';
-import 'package:arcore/Widgets/memories_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:my_memories/widgets/carousel.dart';
+import 'package:my_memories/widgets/memory_grid.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
+  final List _source = [
+    'https://www.ukras.org/wp-content/uploads/formidable/45/1.jpg',
+    'https://wallpaperforu.com/wp-content/uploads/2020/07/city-wallpaper-200725163937371920x1200.jpg',
+    'https://cdn.99images.com/photos/wallpapers/travel-world/mumbai%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-at4eb.jpg'
+  ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-
-          children: [
-            Carousel(),
-
-            Text('Memories'),
-
-            MemoriesList(),
-
-
-
-            Text('Music'),
-
-            ElevatedButton(onPressed:(){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>MusicPage()));
-            } ,
-                child: Text('Go to Music page'))
-          ],
-
-
-
+    return Column(
+      children: [
+        Flexible(flex: 1, child: Carousel(_source)),
+        SizedBox(
+          height: 10,
         ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: (){
-
-          Navigator.of(context).pushNamed(AddMemories.routeName);
-
-        },
-
-      ),
+        Flexible(
+          flex: 2,
+          child: MemoryGrid(),
+        )
+      ],
     );
   }
 }

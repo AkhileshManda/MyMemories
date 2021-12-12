@@ -1,45 +1,33 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import '../models/caro_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Carousel extends StatelessWidget {
-  final List<CaroImage> contents = [
-    CaroImage(content: '1', imgUrl: 'https://picsum.photos/250?image=9'),
-    CaroImage(content: '2', imgUrl: 'https://picsum.photos/250?image=9'),
-    CaroImage(content: '3', imgUrl: 'https://picsum.photos/250?image=9'),
-    CaroImage(content: '4', imgUrl: 'https://picsum.photos/250?image=9'),
-  ];
-
-  Carousel({Key key}) : super(key: key);
-
+  final List _source;
+  Carousel(this._source);
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-        itemCount: contents.length,
-        itemBuilder: (BuildContext context, i, pageViewIndex) {
-          return Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-            child: Card(
-              color: Colors.blue,
-              child: Center(
-                  child: Stack(
-                children: [
-                  Image.network(
-                    'https://picsum.photos/250?image=9',
-                    fit: BoxFit.cover,
-                  ),
-                  Text(contents[i].content)
-                ],
-              )),
-            ),
-          );
-        },
-        options: CarouselOptions(
-            height: MediaQuery.of(context).size.height * 0.25,
-            autoPlayAnimationDuration: const Duration(seconds: 3),
-            autoPlay: true,
-            aspectRatio: 3 / 2,
-            enlargeCenterPage: true,
-            autoPlayInterval: const Duration(seconds: 3)));
+    return Container(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        color: Colors.blueGrey[900],
+        height: 210,
+        child: CarouselSlider(
+          options: CarouselOptions(
+              autoPlayCurve: Curves.fastOutSlowIn,
+              height: 195,
+              autoPlay: true,
+              enlargeCenterPage: true),
+          items: _source.map((i) {
+            return Container(
+              width: MediaQuery.of(context).size.width,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  i as String,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            );
+          }).toList(),
+        ));
   }
 }
