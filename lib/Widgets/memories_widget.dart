@@ -22,8 +22,11 @@ class _MemoriesListState extends State<MemoriesList> {
       CircularProgressIndicator():
           
        Consumer<GreatMemories>(
-         child: Center(
-           child: Text('Make new memories'),
+         child: Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: Center(
+             child: Text('Make new memories', style: TextStyle(fontSize: 20),),
+           ),
          ),
           builder: (context,greatMemories,ch)=> greatMemories.items.length<=0 ? ch:
           SingleChildScrollView(

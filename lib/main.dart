@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       value: GreatMemories(),
       child: MaterialApp(
         title: 'My Memories',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch:  Colors.blueGrey
         ),
