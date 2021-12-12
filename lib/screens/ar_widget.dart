@@ -56,7 +56,7 @@ class _ARPageState extends State<ARPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('sample app'),
+          title: const Text('sample app'),
         ),
         body: ArCoreView(
           onArCoreViewCreated: _onArCoreViewCreated,

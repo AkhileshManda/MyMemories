@@ -48,16 +48,16 @@ class _ImageInputState extends State<ImageInput> {
           decoration: BoxDecoration(border: Border.all(width: 1)),
           child: _storedImage !=null ? Image.file(_storedImage,
             fit: BoxFit.cover, width: double.infinity,)
-              : Text('No Image Taken'),
+              : const Text('No Image Taken'),
         alignment: Alignment.center,
         ),
-        SizedBox(height: 10,),
+        const SizedBox(height: 10,),
 
         Expanded(
             child: FlatButton.icon(
                 onPressed: _takePicture,
-                icon: Icon(Icons.camera),
-                label: Text('Add Picture')
+                icon: const Icon(Icons.camera),
+                label: const Text('Add Picture')
             )
         )
       ],

@@ -15,8 +15,8 @@ class AddMemories extends StatefulWidget {
 
 class _AddMemoriesState extends State<AddMemories> {
 
-  final TextEditingController _titleController = new TextEditingController();
-  final TextEditingController _descController = new TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descController = TextEditingController();
   File _pickedImage;
 
   void _selectImage(File pickedImage){
@@ -39,7 +39,7 @@ class _AddMemoriesState extends State<AddMemories> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add memories'),
+        title: const Text('Add memories'),
       ),
       body: Column(
         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,20 +55,20 @@ class _AddMemoriesState extends State<AddMemories> {
 
                       TextField(
                         controller: _titleController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Title',
 
                         ),
                       ),
                       TextField(
                         controller: _descController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Description',
 
                         ),
                       ),
 
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
 
                       ImageInput(onSelectImage: _selectImage,)
 
@@ -86,8 +86,8 @@ class _AddMemoriesState extends State<AddMemories> {
           RaisedButton.icon(
             color: Colors.amber,
               onPressed:_saveMemory,
-              icon: Icon(Icons.add),
-            label: Text('Add place'),
+              icon: const Icon(Icons.add),
+            label: const Text('Add place'),
             elevation: 0,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           )

@@ -19,11 +19,11 @@ class _MemoriesListState extends State<MemoriesList> {
       future: Provider.of<GreatMemories>(context).fetchMemories(),
       builder: (context,snapshot) => snapshot.connectionState == ConnectionState.waiting ? CircularProgressIndicator():
        Consumer<GreatMemories>(
-         child: Center(child: Text('Make new memories'),),
-          builder: (context,greatMemories,ch)=> greatMemories.items.length<=0 ? ch:
+         child: const Center(child: Text('Make new memories'),),
+          builder: (context,greatMemories,ch)=> greatMemories.items.isEmpty ? ch:
           SingleChildScrollView(
             child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
 
 
@@ -49,7 +49,7 @@ class _MemoriesListState extends State<MemoriesList> {
                           ElevatedButton(onPressed: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context)=> ARPage()));
                           },
-                              child: Text('GO AR'))
+                              child: const Text('GO AR'))
                         ],
                       ),
                     ),
