@@ -10,13 +10,12 @@ class MusicPage extends StatefulWidget {
 class _MusicPageState extends State<MusicPage> {
   @override
   Widget build(BuildContext context) {
-
     AudioPlayer audioPlayer = AudioPlayer();
     AudioCache audioCache = AudioCache(fixedPlayer: audioPlayer);
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/happier.png'), fit: BoxFit.cover)),
         child: BackdropFilter(
@@ -25,14 +24,14 @@ class _MusicPageState extends State<MusicPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
+                  children: const <Widget>[
                     Icon(
                       Icons.arrow_back_ios,
                       color: Colors.white,
@@ -52,7 +51,7 @@ class _MusicPageState extends State<MusicPage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Container(
@@ -60,56 +59,52 @@ class _MusicPageState extends State<MusicPage> {
                 width: 200,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/happier.png'),
                         fit: BoxFit.cover)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              Text(
+              const Text(
                 'Happier',
                 style: TextStyle(
                     fontSize: 35,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'Marshmellow',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
-
               ElevatedButton.icon(
-                  onPressed: (){
-                    audioCache.play('my_music.mp3');
-                  },
-                  icon:Icon(Icons.play_arrow) ,
-                  label: Text('Play'),
+                onPressed: () {
+                  audioCache.play('my_music.mp3');
+                },
+                icon: const Icon(Icons.play_arrow),
+                label: const Text('Play'),
               ),
               ElevatedButton.icon(
-                onPressed: (){
+                onPressed: () {
                   audioPlayer.pause();
                 },
-                icon:Icon(Icons.pause) ,
-                label: Text('Pause'),
+                icon: const Icon(Icons.pause),
+                label: const Text('Pause'),
               ),
               ElevatedButton.icon(
-                onPressed: (){
+                onPressed: () {
                   audioPlayer.stop();
                   Navigator.pop(context);
                 },
-                icon:Icon(Icons.stop) ,
-                label: Text('Stop'),
+                icon: const Icon(Icons.stop),
+                label: const Text('Stop'),
               )
-
-
-
             ],
           ),
         ),
@@ -130,7 +125,7 @@ class _MusicPageState extends State<MusicPage> {
           children: <Widget>[
             Padding(
               padding:
-              const EdgeInsets.only(top: 8, bottom: 8, left: 0, right: 8),
+                  const EdgeInsets.only(top: 8, bottom: 8, left: 0, right: 8),
               child: GestureDetector(onTap: onPressedFunction, child: icon),
             ),
             // IconButton(icon: icon, onPressed: onPressedFunction),

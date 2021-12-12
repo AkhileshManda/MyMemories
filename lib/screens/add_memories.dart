@@ -15,8 +15,8 @@ class AddMemories extends StatefulWidget {
 
 class _AddMemoriesState extends State<AddMemories> {
 
-  final TextEditingController _titleController = new TextEditingController();
-  final TextEditingController _descController = new TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descController = TextEditingController();
   File _pickedImage;
 
   void _selectImage(File pickedImage){
@@ -39,7 +39,7 @@ class _AddMemoriesState extends State<AddMemories> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add memories'),
+        title: const Text('Add memories'),
       ),
       body: Column(
         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,14 +51,12 @@ class _AddMemoriesState extends State<AddMemories> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: TextField(
                       controller: _titleController,
                       decoration: InputDecoration(
                         labelText: 'Title',
-
                       ),
                     ),
                   ),
@@ -72,8 +70,6 @@ class _AddMemoriesState extends State<AddMemories> {
                       ),
                     ),
                   ),
-
-                  SizedBox(height: 10,),
 
                   ImageInput(onSelectImage: _selectImage,)
 

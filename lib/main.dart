@@ -7,7 +7,6 @@ import 'screens/ar_widget.dart';
 import 'screens/home.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,20 +19,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: GreatMemories(),
-
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'My Memories',
         theme: ThemeData(
           primarySwatch: Colors.red,
         ),
         home: HomePage(),
-        routes: {
-          AddMemories.routeName :(ctx)=> AddMemories()
-        },
+        routes: {AddMemories.routeName: (ctx) => AddMemories()},
       ),
     );
   }
 }
-
-
-
