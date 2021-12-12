@@ -4,10 +4,10 @@ import '../models/caro_image.dart';
 
 class Carousel extends StatelessWidget {
   final List<CaroImage> contents = [
-    CaroImage(content: '1', imgUrl: 'https://picsum.photos/250?image=9'),
-    CaroImage(content: '2', imgUrl: 'https://picsum.photos/250?image=9'),
-    CaroImage(content: '3', imgUrl: 'https://picsum.photos/250?image=9'),
-    CaroImage(content: '4', imgUrl: 'https://picsum.photos/250?image=9'),
+    CaroImage(content: '1', imgUrl: 'assets/quote1.jpeg'),
+    CaroImage(content: '2', imgUrl: 'assets/quote2.jpeg'),
+    CaroImage(content: '3', imgUrl: 'assets/quote3.jpeg'),
+    CaroImage(content: '4', imgUrl: 'assets/quote4.jpeg'),
   ];
 
   Carousel({Key key}) : super(key: key);
@@ -22,25 +22,12 @@ class Carousel extends StatelessWidget {
             child: Card(
               color: Colors.blue,
               child: Center(
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                           image: NetworkImage(contents[i].imgUrl),
-                            fit: BoxFit.cover
-                          )
-                        ),
-                      ),
-
-                      Text(
-                          contents[i].content
-                      )
-
-
-                    ],
-                  )
-              ),
+                  child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(contents[i].imgUrl),
+                        fit: BoxFit.cover)),
+              )),
             ),
           );
         },
