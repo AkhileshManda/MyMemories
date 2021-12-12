@@ -17,10 +17,8 @@ class MemoryDetails extends StatelessWidget {
         title: Text(
           title
         ),
-
       ),
       body: Column(
-
         children: [
           Container(
             width: double.infinity,
@@ -33,7 +31,6 @@ class MemoryDetails extends StatelessWidget {
               )
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(20),
             child: Text(title,
@@ -43,9 +40,6 @@ class MemoryDetails extends StatelessWidget {
 
               ),),
           ),
-
-
-
           Padding(
             padding: const EdgeInsets.all(3),
             child: Text(desc,
@@ -55,7 +49,6 @@ class MemoryDetails extends StatelessWidget {
 
             ),),
           ),
-
         ],
       ),
     );

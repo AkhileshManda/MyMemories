@@ -31,11 +31,17 @@ class _MusicPageState extends State<MusicPage> {
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.white,
-                      size: 20,
+                  children: <Widget>[
+                    IconButton(
+
+                      icon: Icon(Icons.arrow_back, color: Colors.white,),
+                      onPressed: (){
+                        Navigator.pop(context);
+                      },
+                      
+
+
+
                     ),
                     Text(
                       'Now Playing',

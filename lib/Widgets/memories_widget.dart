@@ -35,26 +35,42 @@ class _MemoriesListState extends State<MemoriesList> {
                 itemCount: greatMemories.items.length,
                 itemBuilder: (BuildContext context,int index){
                   return GestureDetector(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=> MemoryDetails(
+                          image: greatMemories.items[index].image,
+                          desc: greatMemories.items[index].description,
+                          title: greatMemories.items[index].title,
+                          dateTime: greatMemories.items[index].time,
+                        ))
+                      );
+                    },
                     child: Card(
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 50,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Image(image: FileImage(greatMemories.items[index].image),
+                            fit: BoxFit.contain,),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(greatMemories.items[index].title,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20
+                                  ),),
+                                ),
 
-                              child: Image(image: FileImage(greatMemories.items[index].image))),
-                          Column(
-                            children: [
-                              Text(greatMemories.items[index].title),
-                              Text(greatMemories.items[index].description),
-                              Text(greatMemories.items[index].time.toString())
-                            ],
-                          ),
-                          ElevatedButton(onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> ARPage()));
-                          },
-                              child: const Text('GO AR'))
-                        ],
+
+                              ],
+                            ),
+                            ElevatedButton(onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> ARPage()));
+                            },
+                                child: const Text('GO AR'))
+                          ],
+                        ),
                       ),
                     ),
                   );

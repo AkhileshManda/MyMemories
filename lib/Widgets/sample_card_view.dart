@@ -1,3 +1,5 @@
+import 'package:arcore/screens/ar_widget.dart';
+import 'package:arcore/screens/sample_memory_details.dart';
 import 'package:flutter/material.dart';
 class SampleCards extends StatelessWidget {
   const SampleCards({Key key}) : super(key: key);
@@ -10,52 +12,91 @@ class SampleCards extends StatelessWidget {
         ),
       shrinkWrap: true,
       children: [
-        SizedBox(
-          width: 100,
-          height: 200,
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context,
+              MaterialPageRoute(builder: (context)=> SampleMemoryDetails(
+                title: 'title',
+                desc: 'description',
+                dateTime: DateTime.now(),
+              ))
+            );
+          },
           child: Card(
-            child: Column(
-              children: [
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
 
-                Container(
-                  width: 150,
-                    height: 150,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/happier.png'), fit: BoxFit.cover)
-                    )
-                ),
+                  Image(image :AssetImage('assets/happier.png')),
 
 
 
-                Text('Title'),
-                Text('Description'),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                        'Title',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                      ),
+                    ),
+                  ),
 
-                ElevatedButton(
-                    onPressed: (){},
-                    child: Text('Go to AR')
-                )
+
+                  ElevatedButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ARPage()));
+                      },
+                      child: Text('Go to AR')
+                  )
 
 
-              ],
+                ],
+              ),
             ),
           ),
         ),
-        Card(
-          child: Column(
-            children: [
+        GestureDetector(
 
-              Image(image :AssetImage('assets/happier.png')),
-              Text('Title'),
-              Text('Description'),
+          onTap: (){
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=> SampleMemoryDetails(
+                  title: 'title',
+                  desc: 'description',
+                  dateTime: DateTime.now(),
+                ))
+            );
+          },
 
-              ElevatedButton(
-                  onPressed: (){},
-                  child: Text('Go to AR')
-              )
+          child: Card(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+
+                  Image(image :AssetImage('assets/happier.png')),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Title',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
 
 
-            ],
+                  ElevatedButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ARPage()));
+                      },
+                      child: Text('Go to AR')
+                  )
+
+
+                ],
+              ),
+            ),
           ),
         ),
 
