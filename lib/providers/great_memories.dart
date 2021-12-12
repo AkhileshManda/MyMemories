@@ -1,12 +1,20 @@
+import 'dart:math';
+
 import 'package:arcore/Database/db_helper.dart';
 import 'package:arcore/models/memories.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'dart:io';
-
+import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
 class GreatMemories with ChangeNotifier{
 
-  List<Memories> _items =[];
 
+
+
+  List<Memories>  _items =  [
+
+  ];
   List<Memories> get items{
     return [..._items];
   }

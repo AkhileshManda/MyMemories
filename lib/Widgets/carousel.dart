@@ -36,8 +36,14 @@ class Carousel extends StatelessWidget {
               child: Center(
                   child: Stack(
                     children: [
-                      Image.network('https://picsum.photos/250?image=9',
-                        fit: BoxFit.cover,),
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                           image: NetworkImage(contents[i].imgUrl),
+                            fit: BoxFit.cover
+                          )
+                        ),
+                      ),
 
                       Text(
                           contents[i].content

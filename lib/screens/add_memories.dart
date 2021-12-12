@@ -43,53 +43,60 @@ class _AddMemoriesState extends State<AddMemories> {
       ),
       body: Column(
         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
 
-          Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
 
-                      TextField(
-                        controller: _titleController,
-                        decoration: InputDecoration(
-                          labelText: 'Title',
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: TextField(
+                      controller: _titleController,
+                      decoration: InputDecoration(
+                        labelText: 'Title',
 
-                        ),
                       ),
-                      TextField(
-                        controller: _descController,
-                        decoration: InputDecoration(
-                          labelText: 'Description',
-
-                        ),
-                      ),
-
-                      SizedBox(height: 10,),
-
-                      ImageInput(onSelectImage: _selectImage,)
-
-
-
-                    ],
+                    ),
                   ),
-                ),
-              )
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: TextField(
+                      controller: _descController,
+                      decoration: InputDecoration(
+                        labelText: 'Description',
+
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 10,),
+
+                  ImageInput(onSelectImage: _selectImage,)
+
+
+
+                ],
+              ),
+            ),
           ),
 
 
 
 
-          RaisedButton.icon(
-            color: Colors.amber,
-              onPressed:_saveMemory,
-              icon: Icon(Icons.add),
-            label: Text('Add place'),
-            elevation: 0,
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: RaisedButton.icon(
+              color: Colors.amber,
+                onPressed:_saveMemory,
+                icon: Icon(Icons.add),
+              label: Text('Add place'),
+              elevation: 0,
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
           )
 
         ],

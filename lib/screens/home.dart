@@ -1,4 +1,5 @@
 import 'package:arcore/Widgets/music_widget.dart';
+import 'package:arcore/Widgets/sample_card_view.dart';
 import 'package:arcore/screens/add_memories.dart';
 import 'package:arcore/screens/ar_widget.dart';
 import 'package:arcore/Widgets/carousel.dart';
@@ -16,22 +17,40 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
+
       body: SingleChildScrollView(
         child: Column(
-
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text('Home',
+            style: TextStyle(
+            fontSize: 40,
+              fontWeight: FontWeight.bold
+        ),),
             Carousel(),
 
-            Text('Memories'),
+            Padding(
+              padding: const EdgeInsets.only(top: 20,bottom: 10),
+              child: Text('Memories',
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold
+
+              ),),
+            ),
+
+            SampleCards(),
 
             MemoriesList(),
 
 
 
-            Text('Music'),
+            Text('Music',style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+
+
+            ),),
 
             ElevatedButton(onPressed:(){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>MusicPage()));
