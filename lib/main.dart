@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'My Memories',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch:  Colors.blueGrey
         ),
         home: HomePage(),
         routes: {AddMemories.routeName: (ctx) => AddMemories()},

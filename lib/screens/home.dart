@@ -1,7 +1,7 @@
 import 'package:arcore/Widgets/music_widget.dart';
 import 'package:arcore/Widgets/sample_card_view.dart';
 import 'package:arcore/screens/add_memories.dart';
-import 'package:arcore/ar_widgets/ar_widget.dart';
+//import 'package:arcore/screens/ar_widget.dart';
 import 'package:arcore/Widgets/carousel.dart';
 import 'package:arcore/Widgets/memories_widget.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +36,9 @@ class _HomePageState extends State<HomePage> {
               ),
 
               TextButton(
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                ),
                 onPressed: () { 
                   Navigator.push(
                     context,
@@ -64,10 +67,28 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(fontSize: 18.0, color: Colors.white)),
                         ),
                       ),
+                      // ButtonBar(
+                      //   children: <Widget>[
+                      //     RaisedButton(
+                      //       child: const Text('Play'),
+                      //       onPressed: () {/* ... */},
+                      //     ),
+                      //     RaisedButton(
+                      //       child: const Text('Pause'),
+                      //       onPressed: () {/* ... */},
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),
               ),
+              // ElevatedButton(
+              //     onPressed: () {
+              //       Navigator.push(context,
+              //           MaterialPageRoute(builder: (context) => MusicPage()));
+              //     },
+              //     child: Text('Go to Music page')),
               Padding(
                 padding: const EdgeInsets.only(top: 20, bottom: 10),
                 child: Text(
@@ -82,6 +103,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
         child: Icon(Icons.add),
         onPressed: () {
           Navigator.of(context).pushNamed(AddMemories.routeName);

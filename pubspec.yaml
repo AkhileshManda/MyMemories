@@ -47,7 +47,6 @@ dependencies:
   model_viewer: ^0.8.1
 
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
