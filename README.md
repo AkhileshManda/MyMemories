@@ -1,6 +1,5 @@
 
-# My Memories App (HackIIITV)
-
+# My Memories App 
 This app is made using Flutter, and we use AR to show your 
 cherished memories. 
 This app is mainly targeted for those users who wish to maintain 
